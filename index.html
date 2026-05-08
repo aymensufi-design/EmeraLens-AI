@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>EmeraLens Dashboard</title>
+</head>
+<body>
+    <div class="glass-card" style="width: 85%; max-width: 800px; padding: 30px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h1 style="margin: 0;">EmeraLens</h1>
+            <p style="color: #50C878;">Welcome, <strong>{{ user }}</strong>!</p>
+        </div>
+
+        <form method="POST">
+            <div style="display: flex; gap: 10px;">
+                <input type="text" name="movie_name" placeholder="Search a movie (e.g., Avengers, Inception)..." required style="flex-grow: 1;">
+                <button type="submit" class="emerald-btn" style="width: auto; padding: 0 25px;">Search</button>
+            </div>
+        </form>
+
+        {% if search %}
+        <div style="margin-top: 30px; text-align: left;">
+            <h3 style="border-bottom: 1px solid rgba(80, 200, 120, 0.3); padding-bottom: 10px;">
+                AI Suggestions for: <span style="color: #50C878;">{{ search }}</span>
+            </h3>
+            <div style="margin-top: 15px;">
+                {% if recs and "Error" not in recs[0] and "not found" not in recs[0] %}
+                    {% for movie in recs %}
+                        <div class="movie-item"><span style="color: #50C878; margin-right: 10px;">✦</span> {{ movie }}</div>
+                    {% endfor %}
+                {% else %}
+                    <p style="background: rgba(255, 0, 0, 0.1); padding: 15px; border-radius: 8px; border: 1px solid rgba(255, 0, 0, 0.3);">{{ recs[0] }}</p>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+        
+        <!-- Footer with your name -->
+        <div style="margin-top: 40px; padding-top: 15px; border-top: 1px solid rgba(80, 200, 120, 0.2); font-size: 0.8rem; color: rgba(255,255,255,0.5); text-align: center;">
+            Developed by <span style="color: #50C878; font-weight: bold;">Aymen Sufi</span> | BCA Final Year Project 2026
+            <br><a href="/" style="font-size: 0.8em; opacity: 0.6; margin-top: 10px; display: inline-block;">Logout</a>
+        </div>
+    </div>
+</body>
+</html>

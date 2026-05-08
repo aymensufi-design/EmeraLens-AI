@@ -1,0 +1,98 @@
+* { 
+    margin: 0; padding: 0; box-sizing: border-box; 
+    font-family: 'Poppins', 'Segoe UI', sans-serif; 
+}
+
+body { 
+    background: radial-gradient(circle at center, #053b2a 0%, #022013 100%); 
+    min-height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Glass Card with Emerald Glow */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03); 
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(80, 200, 120, 0.3); 
+    border-radius: 25px;
+    padding: 40px; 
+    width: 90%; 
+    max-width: 600px; 
+    text-align: center; 
+    /* Ye hai Glow Effect */
+    box-shadow: 0 0 40px rgba(80, 200, 120, 0.2), inset 0 0 20px rgba(80, 200, 120, 0.1);
+}
+
+h1 { 
+    color: #50C878; 
+    font-size: 2.5rem;
+    margin-bottom: 25px; 
+    text-shadow: 0 0 15px rgba(80, 200, 120, 0.6); /* Text Glow */
+    letter-spacing: 2px;
+}
+
+input { 
+    width: 100%; 
+    padding: 15px; 
+    margin: 15px 0; 
+    border-radius: 12px;
+    border: 1px solid rgba(80, 200, 120, 0.5); 
+    background: rgba(0, 0, 0, 0.4); 
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #50C878;
+    box-shadow: 0 0 15px rgba(80, 200, 120, 0.4); /* Input Glow on click */
+}
+
+.emerald-btn {
+    width: 100%; 
+    padding: 15px; 
+    background: #50C878; 
+    border: none;
+    border-radius: 12px; 
+    color: #022013; 
+    font-weight: bold; 
+    font-size: 1.1rem;
+    cursor: pointer; 
+    margin-top: 15px;
+    transition: 0.4s;
+    box-shadow: 0 0 20px rgba(80, 200, 120, 0.4); /* Button Glow */
+}
+
+.emerald-btn:hover {
+    background: #40a864;
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(80, 200, 120, 0.7); /* Stronger glow on hover */
+}
+
+.movie-item {
+    background: rgba(80, 200, 120, 0.08); 
+    padding: 15px; 
+    margin: 12px 0;
+    border-left: 5px solid #50C878; 
+    border-radius: 8px; 
+    text-align: left;
+    transition: 0.3s;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.movie-item:hover {
+    background: rgba(80, 200, 120, 0.15);
+    transform: scale(1.02);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+a { color: #50C878; text-decoration: none; font-weight: bold; }
+a:hover { text-shadow: 0 0 10px #50C878; }
